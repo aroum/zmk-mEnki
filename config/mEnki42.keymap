@@ -71,16 +71,17 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-            // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮Bse╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮┬─────────────╮
-  &kp ESC           &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P         &kp DEL
-            // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ 0 ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤┬─────────────╮
-  &kp LSHFT         &kp A         &kp S         &kp D         &kp F         &kp G             &kp H         &kp J         &kp K         &kp L        &kp SEMI       &kp RET
-            // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤Bse├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤┬─────────────╮
-  &kp LCTRL        &kp NUBS       &kp Z         &kp X         &kp C         &kp V             &kp N         &kp M       &kp COMMA     &lt 8 DOT      &kp FSLH      &kp LCTRL
-            // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ 0 ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯──────────────╯
-                                              &kp LSHFT      &kp BSPC     &kp LCTRL         &lt 6 RET   &lt NAV SPACE   &lt 5 ESC  
-            //                             ╰─────────────┴─────────────┴─────────────╯Bse╰─────────────┴─────────────┴─────────────╯
-            >;
+// ------------------------------------------------------------------------------------------------
+//| LGUI/] |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | RGUI/[ | 
+//| CTRL/` |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  | CTRL/' |
+//| LALT/\ |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | RALT/- |
+//                     | RSE | SPC | LWR |   | LWR | BKSP | RSE |
+                        bindings = <
+  &mt LWIN RBKT   &kp Q &kp W &kp E &kp R &kp T               &kp Y  &kp U  &kp I     &kp O   &kp P    &mt RWIN LBKT 
+  &mt LCTRL GRAVE &kp A &kp S &kp D &kp F &kp G               &kp H  &kp J  &kp K     &kp L   &kp SEMI &mt RCTRL SQT
+  &mt LALT  BSLH  &kp Z &kp X &kp C &kp V &kp B               &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &mt RALT MINUS
+        &lt RSE TAB &mt LSHFT SPACE &lt LWR RET              &lt LWR ESC &mt RSHFT BSPC &lt RSE DEL
+                        >;
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
